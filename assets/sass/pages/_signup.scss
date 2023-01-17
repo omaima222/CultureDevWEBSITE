@@ -1,0 +1,103 @@
+
+
+.logBody {
+   background-image:  url("img/1077188.png");
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   padding:  0rem 3rem 0rem 3rem;
+   align-items:baseline;
+}
+
+.logTitle{
+    color: $accent_color;
+    font-size: 4rem;
+    font-weight: 300;
+    &:after{
+        content: " ";
+        width: 12rem;
+        height: 0.1rem;
+        background-color: $text_color;
+        position: absolute;
+        margin-left: 1rem;
+        top: 10%;
+    }
+    &::before{
+        content: " ";
+        width: 0.07rem;
+        height: 34rem;
+        background-color: $text_color;
+        position: absolute;
+        margin-top: 1rem;
+        top: 10%;
+    }
+}
+
+form{
+    width: 25rem;
+    section{
+        margin: 3rem;
+    }
+}
+
+.logDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    label{
+        color:$text_color ;
+        margin-bottom: 0.3rem;
+    }
+    input{
+      @include borderr($text_color);
+      height: 2rem;
+      color: $text_color;
+      padding: 0.5rem;
+    }
+    .pfp{
+      padding: 0rem;
+      height: 1.5rem;
+    }
+}
+.logSubmit{
+    background-color: $accent_color;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border: 1px solid $accent_color;
+    color: $main_color;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    &:hover{
+       background-color: $main_color;
+       color: $accent_color;
+       transition: 0.3s;
+       -webkit-transition: 0.3s;
+       -moz-transition: 0.3s;
+       -ms-transition: 0.3s;
+       -o-transition: 0.3s;
+    }
+    &:active{
+        background-color: $accent_color;
+        color: $main_color;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+     }
+}
+
+.logToSign{
+    color: $text_color;
+    font-weight: 300;
+    font-size: 1.2rem;
+    a{
+        color: $accent_color;
+        text-decoration: none;
+    }
+}

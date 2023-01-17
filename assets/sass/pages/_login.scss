@@ -1,0 +1,42 @@
+
+
+
+.loginTitle{
+    color: $accent_color;
+    font-size: 4rem;
+    font-weight: 300;
+    &:after{
+        content: " ";
+        width: 14rem;
+        height: 0.1rem;
+        background-color: $text_color;
+        position: absolute;
+        margin-left: 1rem;
+        top: 15%;
+    }
+    &::before{
+        content: " ";
+        width: 0.07rem;
+        height: 20rem;
+        background-color: $text_color;
+        position: absolute;
+        margin-top: 2.5rem;
+        top: 11%;
+    }
+}
+
+.loginForm{
+    position: absolute;
+    top: 18%;
+}
+
+.error{
+    background-color: #f0abab;
+    padding: 0.5rem;
+    border-radius: 3px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}

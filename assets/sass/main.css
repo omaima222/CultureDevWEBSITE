@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Dosis", sans-serif;
+}
+
+.loginTitle {
+  color: #4E74FA;
+  font-size: 4rem;
+  font-weight: 300;
+}
+.loginTitle:after {
+  content: " ";
+  width: 14rem;
+  height: 0.1rem;
+  background-color: white;
+  position: absolute;
+  margin-left: 1rem;
+  top: 15%;
+}
+.loginTitle::before {
+  content: " ";
+  width: 0.07rem;
+  height: 20rem;
+  background-color: white;
+  position: absolute;
+  margin-top: 2.5rem;
+  top: 11%;
+}
+
+.loginForm {
+  position: absolute;
+  top: 18%;
+}
+
+.error {
+  background-color: #f0abab;
+  padding: 0.5rem;
+  border-radius: 3px;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.logBody {
+  background-image: url("img/1077188.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0rem 3rem 0rem 3rem;
+  align-items: baseline;
+}
+
+.logTitle {
+  color: #4E74FA;
+  font-size: 4rem;
+  font-weight: 300;
+}
+.logTitle:after {
+  content: " ";
+  width: 12rem;
+  height: 0.1rem;
+  background-color: white;
+  position: absolute;
+  margin-left: 1rem;
+  top: 10%;
+}
+.logTitle::before {
+  content: " ";
+  width: 0.07rem;
+  height: 34rem;
+  background-color: white;
+  position: absolute;
+  margin-top: 1rem;
+  top: 10%;
+}
+
+form {
+  width: 25rem;
+}
+form section {
+  margin: 3rem;
+}
+
+.logDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.logDiv label {
+  color: white;
+  margin-bottom: 0.3rem;
+}
+.logDiv input {
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: 2rem;
+  color: white;
+  padding: 0.5rem;
+}
+.logDiv .pfp {
+  padding: 0rem;
+  height: 1.5rem;
+}
+
+.logSubmit {
+  background-color: #4E74FA;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border: 1px solid #4E74FA;
+  color: black;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+}
+.logSubmit:hover {
+  background-color: black;
+  color: #4E74FA;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.logSubmit:active {
+  background-color: #4E74FA;
+  color: black;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.logToSign {
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.logToSign a {
+  color: #4E74FA;
+  text-decoration: none;
+}
