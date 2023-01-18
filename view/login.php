@@ -29,7 +29,7 @@
             </div>
             <div class="logDiv">
                 <label for="password">Password</label>
-                <input type="text" name="logpassword" required>
+                <input type="password" name="logpassword" required>
             </div>
             <button class="logSubmit" name="logSubmit"  type="submit">S U B M I T</button>
         </section>

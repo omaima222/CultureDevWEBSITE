@@ -15,7 +15,6 @@ class Connection{
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_BOTH);
             return $conn;
-            echo 'sucsseeeeeeeeeessssssssss';
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
             return $e;

@@ -32,7 +32,7 @@
             </div>
             <div class="logDiv">
                 <label for="password">Password</label>
-                <input type="text" name="password" required>
+                <input type="password" name="password" required>
             </div>
             <div class="logDiv">
                 <label for="pfp">Profile picture</label>

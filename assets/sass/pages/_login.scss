@@ -2,27 +2,37 @@
 
 
 .loginTitle{
-    color: $accent_color;
+    color: $main_color;
     font-size: 4rem;
     font-weight: 300;
     &:after{
         content: " ";
         width: 14rem;
-        height: 0.1rem;
-        background-color: $text_color;
+        height: 0.2rem;
+        background-color: $main_color;
         position: absolute;
         margin-left: 1rem;
         top: 15%;
-    }
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+}
     &::before{
         content: " ";
-        width: 0.07rem;
+        width: 0.2rem;
         height: 20rem;
-        background-color: $text_color;
+        background-color: $main_color;
         position: absolute;
         margin-top: 2.5rem;
         top: 11%;
-    }
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+}
 }
 
 .loginForm{

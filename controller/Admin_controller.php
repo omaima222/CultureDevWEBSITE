@@ -33,10 +33,13 @@
           $_SESSION['loginError']="incorrect inputs";
        }
     }
+  }
 
+  function displayUser(){
+       $this->setId($_SESSION['Admin']);
+       return $this->getUser();
   }
 
  }
-
 
 ?>

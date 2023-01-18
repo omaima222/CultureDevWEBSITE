@@ -1,0 +1,21 @@
+
+
+.allmodals{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background-image:  url("img/1077188.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.allForms{
+    background-color: rgba(0, 0, 0, 0.278);
+    .formHeader{
+        display: flex;
+        justify-content: space-between;
+    }
+}

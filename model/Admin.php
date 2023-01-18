@@ -1,6 +1,6 @@
 <?php
 
- require 'Connection.php';
+ require_once 'Connection.php';
 
  class Admin extends Connection{
     
@@ -10,6 +10,7 @@
     public $password;
     public $pfp;
     public $pfpName;
+    public $id;
    
     // ________________setters_______________//
 
@@ -43,13 +44,18 @@
         $this->pfpName = $pfpName;
     }
 
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     // __________________functions______________//
 
     function signup(){
       $que = "INSERT INTO admin VALUES(null,?,?,?,?,?) ";
       $stmt= $this->connect()->prepare($que);
-      $stmt->execute([$this->firstName,$this->lastName,$this->email,$this->pfpName,$this->password]);
-      move_uploaded_file($this->pfp, '../assets/users pfp/' . $this->pfpName);
+      $stmt->execute([$this->firstName,$this->lastName,$this->email,$this->pfp,$this->password]);
+      move_uploaded_file($this->pfpName, '../assets/users pfp/' . $this->pfp);
     }
 
     function login(){
@@ -57,6 +63,13 @@
       $stmt= $this->connect()->prepare($que);
       $stmt->execute([$this->email,$this->password]);
       return $stmt->fetch();
+    }
+
+    function getUser(){
+        $que = "SELECT * FROM admin where id=?";
+        $stmt= $this->connect()->prepare($que);
+        $stmt->execute([$this->id]);
+        return $stmt->fetch();
     }
  }
 

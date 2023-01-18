@@ -8,31 +8,196 @@
 body {
   display: flex;
   justify-content: space-between;
-  font-family: "Dosis", sans-serif;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.dashbody {
+  flex-direction: column;
+  background-color: #EEEEEE;
+}
+
+.navBar {
+  background-image: url("img/nav.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+}
+.navBar_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navBar_user img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}
+.navBar_user h1 {
+  color: #EEEEEE;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+.navBar_user h1 span {
+  color: #382676;
+  font-weight: 400;
+}
+.navBar_title {
+  color: #382676;
+  font-weight: 200;
+  font-size: 4rem;
+  left: 28%;
+  position: relative;
+}
+
+.sideBar {
+  background-color: #382676;
+  color: #EEEEEE;
+  width: 9.3rem;
+  height: 83.8vh;
+  padding: 0.5rem;
+  text-align: center;
+}
+.sideBar h1 {
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+}
+
+.content {
+  display: flex;
+}
+.content .tableHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.content .tableHead button {
+  width: 7rem;
+  background-color: #ADDDD0;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border: 2px solid #ADDDD0;
+  color: #382676;
+  margin-top: 2rem;
+  padding: 0.3rem;
+}
+.content .tableHead button:hover {
+  background: none;
+  border: 2px solid #382676;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.content .tableHead button:active {
+  background-color: #ADDDD0;
+  border: 2px solid #ADDDD0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.content .tableHead h1 {
+  font-weight: 400;
+  font-size: 3rem;
+}
+.content .tableHead .searchBar {
+  display: flex;
+  align-items: center;
+}
+.content .tableHead .searchBar label {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.content .tableHead .searchBar input {
+  background: none;
+  padding: 0.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(75, 75, 75);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.content .postSection {
+  margin: 1rem;
+  width: 85vw;
+}
+.content .postSection table {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.content .postSection table tr {
+  border: 0;
+  border-bottom: 1px solid rgb(99, 95, 95);
+}
+.content .postSection table .arow:hover {
+  background-color: #D9D8DB;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.content .categorySection {
+  width: 85vw;
+  margin: 1rem;
 }
 
 .loginTitle {
-  color: #4E74FA;
+  color: #382676;
   font-size: 4rem;
   font-weight: 300;
 }
 .loginTitle:after {
   content: " ";
   width: 14rem;
-  height: 0.1rem;
-  background-color: white;
+  height: 0.2rem;
+  background-color: #382676;
   position: absolute;
   margin-left: 1rem;
   top: 15%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 .loginTitle::before {
   content: " ";
-  width: 0.07rem;
+  width: 0.2rem;
   height: 20rem;
-  background-color: white;
+  background-color: #382676;
   position: absolute;
   margin-top: 2.5rem;
   top: 11%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .loginForm {
@@ -62,27 +227,37 @@ body {
 }
 
 .logTitle {
-  color: #4E74FA;
+  color: #382676;
   font-size: 4rem;
   font-weight: 300;
 }
 .logTitle:after {
   content: " ";
   width: 12rem;
-  height: 0.1rem;
-  background-color: white;
+  height: 0.2rem;
+  background-color: #382676;
   position: absolute;
   margin-left: 1rem;
   top: 10%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 .logTitle::before {
   content: " ";
-  width: 0.07rem;
+  width: 0.2rem;
   height: 34rem;
-  background-color: white;
+  background-color: #382676;
   position: absolute;
   margin-top: 1rem;
   top: 10%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 form {
@@ -98,19 +273,19 @@ form section {
   margin-top: 2rem;
 }
 .logDiv label {
-  color: white;
+  color: #EEEEEE;
   margin-bottom: 0.3rem;
 }
 .logDiv input {
   background: none;
-  border: 1px solid white;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border: 2px solid #EEEEEE;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
   height: 2rem;
-  color: white;
+  color: #EEEEEE;
   padding: 0.5rem;
 }
 .logDiv .pfp {
@@ -119,21 +294,21 @@ form section {
 }
 
 .logSubmit {
-  background-color: #4E74FA;
+  background-color: #ADDDD0;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
-  border: 1px solid #4E74FA;
-  color: black;
+  border: 1px solid #ADDDD0;
+  color: #382676;
   width: 100%;
   margin-top: 2rem;
   padding: 0.5rem;
 }
 .logSubmit:hover {
-  background-color: black;
-  color: #4E74FA;
+  background: none;
+  color: #ADDDD0;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -141,8 +316,8 @@ form section {
   -o-transition: 0.3s;
 }
 .logSubmit:active {
-  background-color: #4E74FA;
-  color: black;
+  background-color: #ADDDD0;
+  color: #382676;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -151,11 +326,32 @@ form section {
 }
 
 .logToSign {
-  color: white;
-  font-weight: 300;
+  color: #382676;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .logToSign a {
-  color: #4E74FA;
+  color: #ADDDD0;
   text-decoration: none;
+  font-weight: 400;
+}
+
+.allmodals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  background-image: url("img/1077188.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.allForms {
+  background-color: rgba(0, 0, 0, 0.278);
+}
+.allForms .formHeader {
+  display: flex;
+  justify-content: space-between;
 }
