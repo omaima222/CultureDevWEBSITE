@@ -100,4 +100,11 @@
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->title,$this->coverName,$this->description,$this->content,$this->autor,$this->category,$this->tag],$this->id);
     }
+
+    function countpost(){
+        $que="SELECT * FROM post ";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute();
+        return $stmt->rowCount();
+    }
  }

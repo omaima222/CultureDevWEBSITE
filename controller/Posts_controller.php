@@ -50,4 +50,9 @@
       header('Location: ../view/dashboard.php');
     }
    }
+
+   function countit(){
+    $post = new Posts();
+    return  $post->countpost();
+   }
  }

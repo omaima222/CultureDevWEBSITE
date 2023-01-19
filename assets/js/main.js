@@ -8,7 +8,7 @@
    
   let postSection = document.getElementById("postSection");
   let categorySection = document.getElementById("categorySection");
-
+  let staticSection = document.getElementById("staticSection");;
 
 function upAndDelete(){
     window.location='addCategory.php';
@@ -22,9 +22,17 @@ function upAndDelete(){
 function categories(){
   postSection.style.display="none";
   categorySection.style.display="block";
+  staticSection.style.display="none";
 }
 
 function post(){
   postSection.style.display="block";
   categorySection.style.display="none";
+  staticSection.style.display="none";
+}
+
+function statics(){
+  postSection.style.display="none";
+  categorySection.style.display="none";
+  staticSection.style.display="block";
 }

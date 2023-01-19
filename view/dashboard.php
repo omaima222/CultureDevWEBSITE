@@ -36,6 +36,12 @@
             <h1 onclick="statics()">STATISTICS</h1>
         </div>
         <section class="postSection" id="postSection" >
+            <section>
+                <?php if (isset($_SESSION['post'])) { ?>
+                    <div class="saved"><?= $_SESSION['post']; ?></div>
+                <?php }
+                unset($_SESSION['post']); ?>
+            </section>
             <section class="tableHead">
                 <h1>POSTS</h1>
                 <div class="searchBar">
@@ -106,6 +112,27 @@
                         <?php }?>
                     </tbody>
             </table>
+        </section>
+        <section class="staticSection" id="staticSection" style="display: none;">
+            <?php
+                $countPost = new Posts_controller();
+                $countPost=$countPost->countit();
+
+                $countCategorie = new Categories_controller();
+                $countCategorie=$countCategorie->countit();
+            ?>
+            <div class="cards">
+                <h1>Num of posts</h1>
+                <div class="postsNum"><?=$countPost?></div>
+            </div>
+            <div class="cards">
+                <h1>Num of developers</h1>
+                <div class="autorsNum"><?=$countCategorie?></div>
+            </div>
+            <div class="cards">
+                <h1>Distincts developers</h1>
+                <div class="DautorsNum">ggggggggg</div>
+            </div>
         </section>
    </section>
 </body>

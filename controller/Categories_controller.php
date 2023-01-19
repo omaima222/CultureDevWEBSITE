@@ -46,4 +46,9 @@
       header('Location: ../view/dashboard.php');
     }
    }
+
+   function countit(){
+     $category = new Categories();
+     return $category->countcategories();
+   }
  }

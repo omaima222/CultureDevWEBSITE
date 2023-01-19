@@ -51,4 +51,11 @@
         $stmt->execute([$this->id]);
         return $stmt->fetch();
     }
+
+    function countcategories(){
+        $que="SELECT * FROM categories ";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute();
+        return $stmt->rowCount();
+    }
  }
