@@ -70,6 +70,12 @@
             </table>
         </section>
         <section class="categorySection">
+            <section>
+                <?php if (isset($_SESSION['categorySaved'])) { ?>
+                    <div class="saved"><?= $_SESSION['categorySaved']; ?></div>
+                <?php }
+                unset($_SESSION['categorySaved']); ?>
+            </section>
             <section class="tableHead">
               <h1>CATEGORIES</h1>
               <button class="addButton"  onclick="window.location='addCategory.php'">ADD</button>
@@ -82,10 +88,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="arow clickable">
-                            <td>Id</td>
-                            <td>Cover</td>
+                        <?php
+                            require_once '../controller/Categories_controller.php';
+                            $category = new Categories_controller();
+                            $category=$category->get();
+                            foreach($category as $category){
+                        ?>
+                        <tr class="arow clickable " id="tableRow" onclick="window.location='addCategory.php?categoryId=<?=$category['id'];?>';">
+                            <td><?= $category['id'] ?></td>
+                            <td><?= $category['name'] ?></td>
                         </tr>
+                        <?php }?>
                     </tbody>
             </table>
         </section>
@@ -93,4 +106,4 @@
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="../assets/js/main.js"></script>

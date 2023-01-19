@@ -51,7 +51,7 @@
     background-color: $main_color;
     color: $text_color;
     width: 9.3rem;
-    height: 83.8vh;
+    height: 41.8rem;
     padding: 0.5rem;
     text-align: center;
     h1{
@@ -154,7 +154,31 @@
     .categorySection{
         width: 85vw;
         margin: 1rem;
+        table{
+            background-color: #8B75D7;
+            border-radius: 1rem;
+            color: $main_color;
+        }
+        .arow{
+            &:hover{
+                background-color: #D9D8DB;
+                transition: 0.4s;
+                -webkit-transition: 0.4s;
+                -moz-transition: 0.4s;
+                -ms-transition: 0.4s;
+                -o-transition: 0.4s;
+            }
+        }
     }
 }
 
+.saved{
+    width: 85vw;
+    background-color: $secondary_color;
+    color: $main_color;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
 

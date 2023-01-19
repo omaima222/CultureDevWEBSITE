@@ -16,7 +16,6 @@
      public function setCategory($category)
      {
          $this->category = $category;
-        //  echo  $this->category;
      }
 
     //_____________functions______________//
@@ -29,7 +28,6 @@
     }
 
     function addcategorie(){
-        print_r($this->category);
         $que="INSERT INTO categories  VALUES(null,?)";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->category]);
@@ -45,5 +43,12 @@
         $que="UPDATE categories SET id=null , name =? WHERE id=?";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->category, $this->id]);
+    }
+
+    function getcategorie(){
+        $que="SELECT * FROM categories WHERE id=? ";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute([$this->id]);
+        return $stmt->fetch();
     }
  }

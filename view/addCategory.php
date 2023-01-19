@@ -3,7 +3,12 @@
     require_once '../controller/Categories_controller.php';
     $category = new Categories_controller();
     $category = $category->add();
-    
+
+    $deleteit = new Categories_controller();
+    $deleteit = $deleteit->delete();
+
+    $updateit = new Categories_controller();
+    $updateit = $updateit->update();
 ?>
 
 <!DOCTYPE html>
@@ -16,18 +21,31 @@
     <title>Document</title>
 </head>
 <body class="allmodals">
-    <form action="" method="POST" calss="allForms">
+    <form calss="forms" action="" method="POST" >
+        <?php
+          if(isset($_GET['categoryId'])){
+             $Onecategory = new Categories_controller();
+             $Onecategory = $Onecategory->getOne();
+             $name=$Onecategory["name"];
+
+          }else $name = " ";
+        ?>
         <div class="formHeader">
             <h1>Add Category</h1>
             <a href="dashboard.php">X</a>
         </div>
-        <div>
+        <div class="formBody">
             <section>
                 <label for="category">Category name</label>
-                <input type="text" name="category">
+                <input type="text" name="category" value="<?= $name?>">
             </section>
-            <button type="submit" name="saveCategory">Save</button>
+        </div>
+        <div class="formFooter">
+           <button type="submit" name="saveCategory" id="saveCategory">Save</button>
+           <button type="submit" name="deleteCategory" id="deleteCategory" >Delete</button>
+           <button type="submit" name="updateCategory" id="updateCategory" >Update</button>
         </div>
     </form>
 </body>
 </html>
+<script src="../assets/js/main.js"></script>

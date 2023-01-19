@@ -13,7 +13,7 @@
         $this->setpfpName($_FILES['pfp']['tmp_name']);
         $this->setpfp($_FILES['pfp']['name']);   
         
-        if(empty($this->pfp)) $this->setpfpName('user.png');
+        if(empty($this->pfp)) $this->setpfp('user.png');
 
         $this->signup();
 
