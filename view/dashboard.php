@@ -1,6 +1,6 @@
 
 <?php
-    require_once '../controller/Admin_controller.php';
+    require_once '../controller/shared.php';
 
     if(!isset($_SESSION['Admin'])) header('Location: signup.php');
     else{
@@ -31,18 +31,18 @@
    </div>
    <section class="content">
         <div class="sideBar">
-            <h1>POSTS</h1>
-            <h1>CATEGORIES</h1>
-            <h1>STATISTICS</h1>
+            <h1 onclick="post()">POSTS</h1>
+            <h1 onclick="categories()">CATEGORIES</h1>
+            <h1 onclick="statics()">STATISTICS</h1>
         </div>
-        <section class="postSection" hidden>
+        <section class="postSection" id="postSection" >
             <section class="tableHead">
                 <h1>POSTS</h1>
                 <div class="searchBar">
                     <label for="search">SEARCH : </label>
                     <input type="text" name="search">
                 </div>
-                <button class="addButton">ADD</button>
+                <button class="addButton" onclick="window.location='formPost.php'">ADD</button>
             </section>
             <table class="table ">
                     <thead>
@@ -57,28 +57,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="arow clickable">
-                            <td>Id</td>
+                        <?php                            
+                            $post = new Posts_controller();
+                            $post = $post->get();
+                            foreach( $post as $post){
+                        ?>
+                        <tr class="arow clickable" onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
+                            <td><?= $post['post_id']; ?></td>
                             <td>Cover</td>
-                            <td>Title</td>
-                            <td>Description</td>
-                            <td>Category</td>
-                            <td>Autor</td>
-                            <td>Tags</td>
+                            <td><?= $post['title']; ?></td>
+                            <td><?= $post['description']; ?></td>
+                            <td><?= $post['name']; ?></td>
+                            <td><?= $post['first_name']; ?> <?= $post['last_name']; ?></td>
+                            <td><?= $post['tag']; ?></td>
                         </tr>
+                        <?php }?>
                     </tbody>
             </table>
         </section>
-        <section class="categorySection">
+        <section class="categorySection" id="categorySection" style="display: none;">
             <section>
-                <?php if (isset($_SESSION['categorySaved'])) { ?>
-                    <div class="saved"><?= $_SESSION['categorySaved']; ?></div>
+                <?php if (isset($_SESSION['category'])) { ?>
+                    <div class="saved"><?= $_SESSION['category']; ?></div>
                 <?php }
-                unset($_SESSION['categorySaved']); ?>
+                unset($_SESSION['category']); ?>
             </section>
             <section class="tableHead">
               <h1>CATEGORIES</h1>
-              <button class="addButton"  onclick="window.location='addCategory.php'">ADD</button>
+              <button class="addButton"  onclick="window.location='formCategory.php'">ADD</button>
             </section>
             <table class="table ">
                     <thead>
@@ -89,12 +95,11 @@
                     </thead>
                     <tbody>
                         <?php
-                            require_once '../controller/Categories_controller.php';
                             $category = new Categories_controller();
                             $category=$category->get();
                             foreach($category as $category){
                         ?>
-                        <tr class="arow clickable " id="tableRow" onclick="window.location='addCategory.php?categoryId=<?=$category['id'];?>';">
+                        <tr class="arow clickable " id="tableRow" onclick="window.location='formCategory.php?categoryId=<?=$category['id'];?>';">
                             <td><?= $category['id'] ?></td>
                             <td><?= $category['name'] ?></td>
                         </tr>

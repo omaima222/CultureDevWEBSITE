@@ -1,5 +1,7 @@
 <?php
  require_once '../model/Categories.php';
+ 
+
 
  class Categories_controller extends Categories{
 

@@ -139,38 +139,16 @@ body {
   margin: 1rem;
   width: 85vw;
 }
-.content .postSection table {
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  margin-top: 1rem;
-  width: 100%;
-  padding: 0.5rem;
-}
-.content .postSection table tr {
-  border: 0;
-  border-bottom: 1px solid rgb(99, 95, 95);
-}
-.content .postSection table .arow:hover {
-  background-color: #D9D8DB;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-}
 .content .categorySection {
   width: 85vw;
   margin: 1rem;
 }
-.content .categorySection table {
+.content table {
   background-color: #8B75D7;
   border-radius: 1rem;
   color: #382676;
 }
-.content .categorySection .arow:hover {
+.content table .arow:hover {
   background-color: #D9D8DB;
   transition: 0.4s;
   -webkit-transition: 0.4s;
@@ -248,6 +226,12 @@ body {
   padding: 0rem 3rem 0rem 3rem;
   align-items: baseline;
 }
+.logBody form {
+  width: 25rem;
+}
+.logBody form section {
+  margin: 3rem;
+}
 
 .logTitle {
   color: #382676;
@@ -281,13 +265,6 @@ body {
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
-}
-
-form {
-  width: 25rem;
-}
-form section {
-  margin: 3rem;
 }
 
 .logDiv {
@@ -410,6 +387,24 @@ form section {
   border: 2px solid #EEEEEE;
   color: #EEEEEE;
 }
+.allmodals form .formBody section select {
+  margin-top: 0.5rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background: none;
+  border-radius: 1rem;
+  border: 2px solid #EEEEEE;
+  color: #EEEEEE;
+}
+.allmodals form .formBody section textarea {
+  margin-top: 0.5rem;
+  height: 5rem;
+  padding: 0.5rem;
+  background: none;
+  border-radius: 1rem;
+  border: 2px solid #EEEEEE;
+  color: #EEEEEE;
+}
 .allmodals form .formFooter button {
   float: right;
   background-color: #ADDDD0;
@@ -441,4 +436,13 @@ form section {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
-}/*# sourceMappingURL=main.css.map */
+}
+.allmodals form .postform .separate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.allmodals form .postform #editor {
+  margin-left: 1rem;
+}

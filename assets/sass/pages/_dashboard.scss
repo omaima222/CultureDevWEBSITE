@@ -126,39 +126,15 @@
     .postSection{
         margin: 1rem;
         width: 85vw;
-        table{
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px;
-            margin-top: 1rem;
-            width: 100%;
-            padding: 0.5rem;
-            tr{
-                border: 0;
-                border-bottom: 1px solid  rgb(99, 95, 95);
-            }
-            .arow{
-                &:hover{
-                    background-color: #D9D8DB;
-                    transition: 0.4s;
-                    -webkit-transition: 0.4s;
-                    -moz-transition: 0.4s;
-                    -ms-transition: 0.4s;
-                    -o-transition: 0.4s;
-                }
-            }
-        }
     }
     .categorySection{
         width: 85vw;
         margin: 1rem;
-        table{
-            background-color: #8B75D7;
-            border-radius: 1rem;
-            color: $main_color;
-        }
+    }
+    table{
+        background-color: #8B75D7;
+        border-radius: 1rem;
+        color: $main_color;
         .arow{
             &:hover{
                 background-color: #D9D8DB;
@@ -170,15 +146,35 @@
             }
         }
     }
+ 
 }
 
 .saved{
-    width: 85vw;
-    background-color: $secondary_color;
-    color: $main_color;
-    font-size: 1rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
+    @include session($secondary_color);
 }
 
+
+// table{
+//     border-radius: 5px;
+//     -webkit-border-radius: 5px;
+//     -moz-border-radius: 5px;
+//     -ms-border-radius: 5px;
+//     -o-border-radius: 5px;
+//     margin-top: 1rem;
+//     width: 100%;
+//     padding: 0.5rem;
+//     tr{
+//         border: 0;
+//         border-bottom: 1px solid  rgb(99, 95, 95);
+//     }
+//     .arow{
+//         &:hover{
+//             background-color: #D9D8DB;
+//             transition: 0.4s;
+//             -webkit-transition: 0.4s;
+//             -moz-transition: 0.4s;
+//             -ms-transition: 0.4s;
+//             -o-transition: 0.4s;
+//         }
+//     }
+// }

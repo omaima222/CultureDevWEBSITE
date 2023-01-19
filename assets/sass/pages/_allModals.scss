@@ -49,6 +49,24 @@
                     border: 2px solid $text_color;
                     color: $text_color;
                 }
+                select {
+                    margin-top: 0.5rem;
+                    height: 2rem;
+                    padding: 0.5rem;
+                    background: none;
+                    border-radius: 1rem;
+                    border: 2px solid $text_color;
+                    color: $text_color;                
+                }
+                textarea{
+                    margin-top: 0.5rem;
+                    height: 5rem;
+                    padding: 0.5rem;
+                    background: none;
+                    border-radius: 1rem;
+                    border: 2px solid $text_color;
+                    color: $text_color;                  
+                }
             }
 
         }
@@ -84,6 +102,17 @@
                         -ms-transition: 0.3s;
                         -o-transition: 0.3s;
                      }
+            }
+        }
+        .postform{
+            .separate{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            #editor{
+                margin-left: 1rem;
             }
         }
     }

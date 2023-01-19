@@ -1,6 +1,5 @@
 <?php
  require_once '../model/Admin.php';
- session_start();
 
  class Admin_controller extends Admin{
 

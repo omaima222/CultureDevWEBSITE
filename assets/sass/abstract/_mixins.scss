@@ -8,3 +8,13 @@
     -ms-border-radius:1rem;
     -o-border-radius:1rem;
 }
+
+@mixin  session($color) {
+    width: 85vw;
+    background-color: $color;
+    color: $main_color;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}

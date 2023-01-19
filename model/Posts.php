@@ -1,6 +1,6 @@
 <?php
 
- require 'Connection.php';
+ require_once 'Connection.php';
 
  class Posts extends Connection{
      
@@ -72,6 +72,16 @@
         return $stmt->fetchAll();
     }
 
+    function getpost(){
+        $que="SELECT * FROM post
+        INNER JOIN categories on categories.id=post.category_id
+        INNER JOIN admin on admin.id=post.autor_id
+        WHERE post_id=?";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute([$this->id]);
+        return $stmt->fetch();
+    }
+
     function addpost(){
         $que="INSERT INTO post VALUES(null,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($que);
@@ -80,13 +90,13 @@
     }
 
     function deletepost(){
-        $que="DELETE FROM post WHERE id=?";
+        $que="DELETE FROM post WHERE post_id=?";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->id]);
     }
 
     function updatepost(){
-        $que="UPDATE post SET id=null , title =? ,cover=?,description=?,content=?,autor_id=?,category_id,tag=? WHERE id=?";
+        $que="UPDATE post SET post_id=null , title =? ,cover=?,description=?,content=?,autor_id=?,category_id,tag=? WHERE post_id=?";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->title,$this->coverName,$this->description,$this->content,$this->autor,$this->category,$this->tag],$this->id);
     }
