@@ -86,7 +86,7 @@
         $que="INSERT INTO post VALUES(null,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->title,$this->coverName,$this->description,$this->content,$this->autor,$this->category,$this->tag]);
-        move_uploaded_file($this->cover, '../assets/post covers/' . $this->coverName);
+        move_uploaded_file($this->cover, '../assets/covers/' . $this->coverName);
     }
 
     function deletepost(){

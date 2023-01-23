@@ -9,8 +9,8 @@
             $post->setautor($_SESSION['Admin']);
             $post->setcategory($_POST['category_id']);
             $post->setdescription($_POST['description']);
-            $post->setcover($_FILES['cover']['name']);
-            $post->setcoverName($_FILES['cover']['tmp_name']);
+            $post->setcover($_FILES['cover']['tmp_name']);
+            $post->setcoverName($_FILES['cover']['name']);
             $post->setcontent("content");
             $post->settitle($_POST['title']);
             $post->settag($_POST['tag']);

@@ -70,7 +70,7 @@
                         ?>
                         <tr class="arow clickable" onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
                             <td><?= $post['post_id']; ?></td>
-                            <td>Cover</td>
+                            <td><img style="width:10rem; " src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
                             <td><?= $post['title']; ?></td>
                             <td><?= $post['description']; ?></td>
                             <td><?= $post['name']; ?></td>

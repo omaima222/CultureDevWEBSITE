@@ -74,7 +74,7 @@
                                 $category = $category->get();
                                 foreach($category as $category){
                             ?>
-                            <option  value=<?= $category['id'] ?> ><?= $category['name'] ?></option>
+                            <option class="text-black"  value=<?= $category['id'] ?> ><?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
                     </section>
