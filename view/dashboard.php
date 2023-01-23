@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../assets/sass/main.css">
     <link href="../assets/css/vendor.min.css" rel="stylesheet" />
    	<link href="../assets/css/app.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 <body class="dashbody">
@@ -45,8 +46,12 @@
             <section class="tableHead">
                 <h1>POSTS</h1>
                 <div class="searchBar">
-                    <label for="search">SEARCH : </label>
-                    <input type="text" name="search">
+                    <form action="" method="POST">
+                        <label for="search">SEARCH : </label>
+                        <input type="text" name="searchTitle" placeholder="By title or Category">
+                        <button name="searchButton" class="searchButton"><i class="bi bi-search fa-1x"></i></button>
+                        <!-- <span><table>(Type "all" to show all posts)</table></span> -->
+                    </form>
                 </div>
                 <button class="addButton" onclick="window.location='formPost.php'">ADD</button>
             </section>
@@ -65,7 +70,8 @@
                     <tbody>
                         <?php                            
                             $post = new Posts_controller();
-                            $post = $post->get();
+                            if(isset($_POST['searchButton'])) $post = $post->search();
+                            else $post = $post->get();
                             foreach( $post as $post){
                         ?>
                         <tr class="arow clickable" onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
@@ -131,7 +137,19 @@
             </div>
             <div class="cards">
                 <h1>Distincts developers</h1>
-                <div class="DautorsNum">ggggggggg</div>
+                <div class="DautorsNum">
+                    <?php
+                       $adminCount = new Admin_controller();
+                       $adminCount = $adminCount->get();
+                       $countId=0;
+                       $theDevlopper;
+                       foreach($adminCount as $adminCount){
+                          if($adminCount['id']==$post['post_id']){
+                            $countId++;
+                          }
+                       }
+                    ?>
+                </div>
             </div>
         </section>
    </section>

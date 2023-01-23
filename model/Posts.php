@@ -107,4 +107,14 @@
         $stmt->execute();
         return $stmt->rowCount();
     }
+
+    function searchpost(){
+        $que="SELECT * FROM post
+        INNER JOIN categories on categories.id=post.category_id
+        INNER JOIN admin on admin.id=post.autor_id
+        WHERE title=? OR name=? ";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute([$this->title,$this->category]);
+        return $stmt->fetchAll();
+    }
  }

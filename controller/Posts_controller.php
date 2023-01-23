@@ -55,4 +55,15 @@
     $post = new Posts();
     return  $post->countpost();
    }
+
+   function search(){
+        $post = new Posts();
+        if($_POST['searchTitle']=="all"){  return $post->getposts();}
+        else{
+        $post->settitle($_POST['searchTitle']);
+        $post->setcategory($_POST['searchTitle']);
+        return $post->searchpost();
+        }
+   }
  }
+

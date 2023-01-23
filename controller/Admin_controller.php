@@ -38,6 +38,10 @@
        $this->setId($_SESSION['Admin']);
        return $this->getUser();
   }
+  
+  function get(){
+       return $this->getUsers();
+  }
 
  }
 

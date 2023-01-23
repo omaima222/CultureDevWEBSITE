@@ -71,6 +71,13 @@
         $stmt->execute([$this->id]);
         return $stmt->fetch();
     }
+
+    function getUsers(){
+        $que = "SELECT * FROM admin";
+        $stmt= $this->connect()->prepare($que);
+        $stmt->execute([$this->id]);
+        return $stmt->fetchAll();
+    }
  }
 
 ?>

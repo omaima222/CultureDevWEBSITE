@@ -135,6 +135,20 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.content .tableHead .searchBar .searchButton {
+  height: 1.5rem;
+  width: 2rem;
+  margin-top: 0;
+  margin-left: 0.5rem;
+  padding: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: none;
+  border: 2px solid #382676;
+}
 .content .postSection {
   margin: 1rem;
   width: 85vw;
@@ -431,7 +445,7 @@ body {
   background: none;
   border-radius: 1rem;
   border: 2px solid #EEEEEE;
-  color: #EEEEEE;
+  color: #382676;
 }
 .allmodals form .formBody section textarea {
   margin-top: 0.5rem;
