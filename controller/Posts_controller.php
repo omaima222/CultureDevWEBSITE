@@ -5,17 +5,22 @@
 
    function add(){
         if(isset($_POST['savePost'])){
-            $post = new Posts();
-            $post->setautor($_SESSION['Admin']);
-            $post->setcategory($_POST['category_id']);
-            $post->setdescription($_POST['description']);
-            $post->setcover($_FILES['cover']['tmp_name']);
-            $post->setcoverName($_FILES['cover']['name']);
-            $post->setcontent($_POST['content']);
-            $post->settitle($_POST['title']);
-            $post->settag($_POST['tag']);
+           $count = count($_POST['idPostforLoop']);
+        
+           for($i=0;$i<$count;$i++){
+                $post = new Posts();
+                $post->setautor($_SESSION['Admin']);
+                $post->setcategory($_POST['category_id'][$i]);
+                $post->setdescription($_POST['description'][$i]);
+                $post->setcover($_FILES['cover']['tmp_name'][$i]);
+                $post->setcoverName($_FILES['cover']['name'][$i]);
+                $post->setcontent($_POST['content'][$i]);
+                $post->settitle($_POST['title'][$i]);
+                $post->settag($_POST['tag'][$i]);
 
-            $post->addpost();
+                $post->addpost();
+           }
+
             $_SESSION['post']="Post is succefuly Saved";
             header('Location: ../view/dashboard.php');
         }

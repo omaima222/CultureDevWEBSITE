@@ -19,9 +19,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/sass/main.css">
-    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
-   	<link href="../assets/css/app.min.css" rel="stylesheet" />
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <!-- <link href="../assets/css/vendor.min.css" rel="stylesheet" />
+   	<link href="../assets/css/app.min.css" rel="stylesheet" /> -->
     <title>Document</title>
 </head>
 <body class="allmodals">
@@ -47,72 +46,78 @@
             <h1>Add Post</h1>
             <a href="dashboard.php">X</a>
         </div>
-        <div class="formBody postform">
-            <div class="separate">
+        <div class="formBody postform" id="formPostBody">
+            <div class="separate" id="theActuallInputs">
                 <div>
+                    <input type="text" name="idPostforLoop[]" hidden>
                     <section>
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="postTitle" value="<?=$title?>">
+                        <input type="text" name="title[]" id="postTitle" value="<?=$title?>">
                         <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="titleError"></div>
                     </section>
                     <section>
                         <label for="cover">Cover</label>
-                        <input type="file" name="cover" accept=" .jpg, .png, .jpeg">
+                        <input type="file" name="cover[]" accept=" .jpg, .png, .jpeg">
                     </section>
                     <section>
                         <label for="description">Description</label>
-                        <textarea type="text" name="description" id="postDesc" ><?=$description?></textarea>
+                        <textarea type="text" name="description[]" id="postDesc" ><?=$description?></textarea>
                         <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="descError"></div>
                     </section>
                     <section>
                         <label for="tag">Tag</label>
-                        <input type="text" name="tag" id="postTag" value="<?=$tag?>">
+                        <input type="text" name="tag[]" id="postTag" value="<?=$tag?>">
                         <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="tagError"></div>
                     </section>
                     <section>
                         <label for="category_id">Category</label>
-                        <select class="customSelect text-white" name="category_id" id="category_id">
-                            <option selected disabled value="">Please select</option>
+                        <select class="customSelect text-white" name="category_id[]" id="category_id" required>
+                            <option class="options" selected disabled value="">Please select</option>
                             <?php
                                 $category = new Categories_controller();
                                 $category = $category->get();
                                 foreach($category as $category){
                             ?>
-                            <option class="text-black" value="<?=$category['id']?>"  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
+                            <option class="options text-black" value="<?=$category['id']?>"  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
+                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="categoryError"></div>
                     </section>
                 </div>
                 <div>
                     <section>
                         <label for="content" class="mb-2">Content</label>
-                        <textarea name="content" id="postContent"><?=$content?></textarea>
+                        <textarea name="content[]" id="postContent"><?=$content?></textarea>
                         <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="contentError"></div>
                     </section>
                 </div>
            </div>
         </div>
         <div class="formFooter">
-           <button type="submit" name="savePost" id="savePost">Save</button>
+           <button type="submit" name="savePost" id="savePost" >Save</button>
+           <button type="submit" name="addOneMore" id="addOneMore" >Add More</button>
            <button type="submit" name="deletePost" id="deletePost" style="display: none;" >Delete</button>
            <button type="submit" name="updatePost" id="updatePost" style="display: none;" >Update</button>
         </div>
     </form>
 </body>
 </html>
-<script src="../assets/tinymce/tinymce.min.js"></script>
-<script src="../assets/js/main.js"></script>
 
 <?php
-          if(isset($_GET['postId'])){
+    if(isset($_GET['postId'])){
 ?>
 <script>
-        let  deletePost=document.getElementById("deletePost");
-        let  updatePost=document.getElementById("updatePost");
-        let  savePost=document.getElementById("savePost");
+    let  deletePost=document.getElementById("deletePost");
+    let  updatePost=document.getElementById("updatePost");
+    let  savePost=document.getElementById("savePost");
+    let  addOneMore=document.getElementById("addOneMore");
 
-        deletePost.style.display = "block";
-        updatePost.style.display = "block";
-        savePost.style.display = "none";
+    deletePost.style.display = "block";
+    updatePost.style.display = "block";
+    savePost.style.display = "none";
+    addOneMore.style.display = "none";
 </script>
 <?php }?>
+
+<script src="../assets/tinymce/tinymce.min.js"></script>
+<script src="../assets/js/main.js"></script>

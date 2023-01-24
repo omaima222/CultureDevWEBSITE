@@ -412,7 +412,7 @@ body {
   background-size: cover;
 }
 .allmodals form {
-  background-color: #382676;
+  background-color: rgba(0, 0, 0, 0.315);
   border-radius: 1rem;
 }
 .allmodals form .formHeader {

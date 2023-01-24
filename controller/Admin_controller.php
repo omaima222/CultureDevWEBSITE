@@ -29,7 +29,6 @@
        if($result){
           $_SESSION['Admin']=$result['id'];
           header("Location: ../view/dashboard.php");
-        // echo $result['id'];
        }else{
           $_SESSION['loginError']="incorrect inputs";
        }
