@@ -96,9 +96,17 @@
     }
 
     function updatepost(){
-        $que="UPDATE post SET post_id=null , title =? ,cover=?,description=?,content=?,autor_id=?,category_id,tag=? WHERE post_id=?";
-        $stmt = $this->connect()->prepare($que);
-        $stmt->execute([$this->title,$this->coverName,$this->description,$this->content,$this->autor,$this->category,$this->tag],$this->id);
+        if(empty($this->coverName)){
+            $que="UPDATE post SET title =?,description=?,content=?,autor_id=?,category_id=?,tag=? WHERE post_id=?";
+            $stmt = $this->connect()->prepare($que);
+            $stmt->execute([$this->title,$this->description,$this->content,$this->autor,$this->category,$this->tag,$this->id]);
+        }else{
+            $que="UPDATE post SET title =? ,cover=?,description=?,content=?,autor_id=?,category_id=?,tag=? WHERE post_id=?";
+            $stmt = $this->connect()->prepare($que);
+            $stmt->execute([$this->title,$this->coverName,$this->description,$this->content,$this->autor,$this->category,$this->tag,$this->id]);
+            move_uploaded_file($this->cover, '../assets/covers/' . $this->coverName);
+        }
+       
     }
 
     function countpost(){

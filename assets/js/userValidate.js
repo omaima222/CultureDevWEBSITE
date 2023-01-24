@@ -14,15 +14,16 @@ let password = document.getElementById("password");
 
 
 signupForm.addEventListener('submit', (e)=>{
-    // e.preventDefault();
-    console.log(lname.value);
-    console.log(email.value);
-    console.log(password.value);
+
+    fnameError.innerHTML= "";
+    lnameError.innerHTML= "";
+    passwordError.innerHTML= "";
+    emailError.innerHTML= "";
     
     if(fname.value == ""){
       e.preventDefault();
       fnameError.innerText = "This input is required";
-    }else if(fname.value <= 2){
+    }else if(fname.value < 3){
       e.preventDefault();
       fnameError.innerText = "This name is too short";
     }else if(fname.value.includes(" ")){
@@ -30,11 +31,12 @@ signupForm.addEventListener('submit', (e)=>{
         fnameError.innerText = "This input shoud not include space";
     }
 
+    // console.log(fnameError);
 
     if(lname.value == ""){
         e.preventDefault();
         lnameError.innerText = "This input is required";
-    }else if(lname.value <= 2){
+    }else if(lname.value < 3){
         e.preventDefault();
         lnameError.innerText = "This name is too short";
     }else if(fname.value.includes(" ")){
@@ -45,7 +47,7 @@ signupForm.addEventListener('submit', (e)=>{
     if(password.value == ""){
         e.preventDefault();
         passwordError.innerText = "This input is required";
-    }else if(password.value <= 6){
+    }else if(password.value < 6){
         e.preventDefault();
         passwordError.innerText = " password should contain at leat 8 caracters";
     } else if(fname.value.includes(" ")){

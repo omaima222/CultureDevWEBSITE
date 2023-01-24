@@ -1,5 +1,7 @@
 <?php
     require_once '../controller/shared.php';
+    if(!isset($_SESSION['Admin'])) header('Location: login.php');
+
     $post = new Posts_controller();
     $post = $post->add();
 
@@ -31,14 +33,14 @@
              $title=$OnePost["title"];
              $tag=$OnePost["tag"];
              $description=$OnePost["description"];
-             $category=$OnePost["category_id"];
+             $categoryid=$OnePost["category_id"];
              $content=$OnePost["content"];
 
           }else {
             $title = " ";
             $tag=" ";
             $description=" ";
-            $category=" ";
+            $categoryid=" ";
             $content=" ";
           }
         ?>
@@ -70,14 +72,14 @@
                     </section>
                     <section>
                         <label for="category_id">Category</label>
-                        <select class="customSelect" name="category_id" id="category_id">
+                        <select class="customSelect text-white" name="category_id" id="category_id">
                             <option selected disabled value="">Please select</option>
                             <?php
                                 $category = new Categories_controller();
                                 $category = $category->get();
                                 foreach($category as $category){
                             ?>
-                            <option class="text-black"  value=<?= $category['id'] ?> ><?= $category['name'] ?></option>
+                            <option class="text-black" value=<?=$category['id']?>  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
                     </section>
@@ -86,6 +88,7 @@
                     <section>
                         <label for="content" class="mb-2">Content</label>
                         <textarea name="content" id="postContent"><?=$content?></textarea>
+                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="contentError"></div>
                     </section>
                 </div>
            </div>

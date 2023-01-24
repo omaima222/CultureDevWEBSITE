@@ -49,14 +49,14 @@
                     border: 2px solid $text_color;
                     color: $text_color;
                 }
-                select {
+                select{
                     margin-top: 0.5rem;
                     height: 2rem;
                     padding: 0.5rem;
                     background: none;
                     border-radius: 1rem;
                     border: 2px solid $text_color;
-                    color: $main_color;                
+                    color: $text_color!important;                
                 }
                 textarea{
                     margin-top: 0.5rem;

@@ -34,5 +34,6 @@
             <button class="logSubmit" name="logSubmit"  type="submit">S U B M I T</button>
         </section>
     </form>
+    <h1 class="logToSign">Don't have an account ? <a href="signup.php">signup</a></h1>
 </body>
 </html>

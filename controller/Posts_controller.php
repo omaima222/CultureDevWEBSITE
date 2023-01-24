@@ -11,7 +11,7 @@
             $post->setdescription($_POST['description']);
             $post->setcover($_FILES['cover']['tmp_name']);
             $post->setcoverName($_FILES['cover']['name']);
-            $post->setcontent("content");
+            $post->setcontent($_POST['content']);
             $post->settitle($_POST['title']);
             $post->settag($_POST['tag']);
 
@@ -45,9 +45,19 @@
    function update(){
     if(isset($_POST['updatePost'])){
       $post = new Posts();
+      $post->setId($_GET['postId']);
+      $post->setautor($_SESSION['Admin']);
+      $post->setcategory($_POST['category_id']);
+      $post->setdescription($_POST['description']);
+      $post->setcover($_FILES['cover']['tmp_name']);
+      $post->setcoverName($_FILES['cover']['name']);
+      $post->setcontent($_POST['content']);
+      $post->settitle($_POST['title']);
+      $post->settag($_POST['tag']);
       $post->updatepost();
-      $_SESSION['post']="Post is succefuly deleted";
+      $_SESSION['post']="Post is succefuly updated";
       header('Location: ../view/dashboard.php');
+
     }
    }
 

@@ -80,12 +80,15 @@
                             if(isset($_POST['searchButton'])) $post = $post->search();
                             else $post = $post->get();
                             foreach( $post as $post){
+                                if(strlen($post['description']) > 30){
+                                    $desc = substr($post['description'],0,30).' ...';
+                                }else $desc = $post['description'];
                         ?>
                         <tr class="arow clickable " onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
                             <td><?= $post['post_id']; ?></td>
                             <td><img style="width:10rem;" class="rounded-3" src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
                             <td><?= $post['title']; ?></td>
-                            <td><?= $post['description']; ?></td>
+                            <td title="<?= $post['description']; ?>"><?= $desc; ?></td>
                             <td><?= $post['name']; ?></td>
                             <td><?= $post['first_name']; ?> <?= $post['last_name']; ?></td>
                             <td><?= $post['tag']; ?></td>
@@ -138,15 +141,15 @@
                 $countUsers=$countUsers->countit();
             ?>
             <div class="cards">
-                <h1>Number of posts</h1>
+                <h1>Posts total</h1>
                 <div class="postsNum"><?=$countPost?></div>
             </div>
             <div class="cards">
-                <h1>Number of developers</h1>
+                <h1>Developers total</h1>
                 <div class="autorsNum"><?=$countUsers?></div>
             </div>
             <div class="cards">
-                <h1>Number of Categories</h1>
+                <h1>Categories total</h1>
                 <div class="DautorsNum"><?=$countCategorie?></div>
             </div>
         </section>

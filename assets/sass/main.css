@@ -458,7 +458,7 @@ body {
   background: none;
   border-radius: 1rem;
   border: 2px solid #EEEEEE;
-  color: #382676;
+  color: #EEEEEE !important;
 }
 .allmodals form .formBody section textarea {
   margin-top: 0.5rem;

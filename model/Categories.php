@@ -40,7 +40,7 @@
     }
 
     function updatecategorie(){
-        $que="UPDATE categories SET id=null , name =? WHERE id=?";
+        $que="UPDATE categories SET  name =? WHERE id=?";
         $stmt = $this->connect()->prepare($que);
         $stmt->execute([$this->category, $this->id]);
     }

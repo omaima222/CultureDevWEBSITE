@@ -65,10 +65,12 @@ let postForm = document.getElementById("postForm");
 let postTitle = document.getElementById("postTitle");
 let postTag = document.getElementById("postTag");
 let postDesc = document.getElementById("postDesc");
+let postContent = document.getElementById("postContent");
 
 let TitleError = document.getElementById("titleError");
 let TagError = document.getElementById("tagError");
 let DescError= document.getElementById("descError");
+let contentError= document.getElementById("contentError");
 
 postForm.addEventListener('submit', (e)=>{
 
@@ -95,6 +97,11 @@ postForm.addEventListener('submit', (e)=>{
   if(postDesc.value == ""){
     e.preventDefault();
     DescError.innerText= "This input is required";
+  }
+
+  if(postContent.value == ""){
+    e.preventDefault();
+    contentError.innerText= "This input is required";
   }
 })
 

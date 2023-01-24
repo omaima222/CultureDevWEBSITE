@@ -30,7 +30,7 @@
             </div>
             <div class="logDiv">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" >
+                <input type="text" name="email" id="email" >
                 <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="emailError"></div>
             </div>
             <div class="logDiv">

@@ -1,6 +1,8 @@
 
 <?php
     require_once '../controller/shared.php';
+    if(!isset($_SESSION['Admin'])) header('Location: login.php');
+
     $category = new Categories_controller();
     $category = $category->add();
 
