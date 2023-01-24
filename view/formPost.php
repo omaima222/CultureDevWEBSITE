@@ -35,7 +35,6 @@
              $description=$OnePost["description"];
              $categoryid=$OnePost["category_id"];
              $content=$OnePost["content"];
-
           }else {
             $title = " ";
             $tag=" ";
@@ -79,7 +78,7 @@
                                 $category = $category->get();
                                 foreach($category as $category){
                             ?>
-                            <option class="text-black" value=<?=$category['id']?>  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
+                            <option class="text-black" value="<?=$category['id']?>"  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
                     </section>
@@ -95,11 +94,25 @@
         </div>
         <div class="formFooter">
            <button type="submit" name="savePost" id="savePost">Save</button>
-           <button type="submit" name="deletePost" id="deletePost" >Delete</button>
-           <button type="submit" name="updatePost" id="updatePost" >Update</button>
+           <button type="submit" name="deletePost" id="deletePost" style="display: none;" >Delete</button>
+           <button type="submit" name="updatePost" id="updatePost" style="display: none;" >Update</button>
         </div>
     </form>
 </body>
 </html>
 <script src="../assets/tinymce/tinymce.min.js"></script>
 <script src="../assets/js/main.js"></script>
+
+<?php
+          if(isset($_GET['postId'])){
+?>
+<script>
+        let  deletePost=document.getElementById("deletePost");
+        let  updatePost=document.getElementById("updatePost");
+        let  savePost=document.getElementById("savePost");
+
+        deletePost.style.display = "block";
+        updatePost.style.display = "block";
+        savePost.style.display = "none";
+</script>
+<?php }?>

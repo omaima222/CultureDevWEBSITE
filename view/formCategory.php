@@ -44,10 +44,24 @@
         </div>
         <div class="formFooter">
            <button type="submit" name="saveCategory" id="saveCategory">Save</button>
-           <button type="submit" name="deleteCategory" id="deleteCategory" >Delete</button>
-           <button type="submit" name="updateCategory" id="updateCategory" >Update</button>
+           <button type="submit" name="deleteCategory" id="deleteCategory" style="display: none;">Delete</button>
+           <button type="submit" name="updateCategory" id="updateCategory" style="display: none;">Update</button>
         </div>
     </form>
 </body>
 </html>
 <script src="../assets/js/main.js"></script>
+
+<?php
+          if(isset($_GET['categoryId'])){
+?>
+<script>
+        let  deleteCategory=document.getElementById("deleteCategory");
+        let  updateCategory=document.getElementById("updateCategory");
+        let  saveCategory=document.getElementById("saveCategory");
+
+        deleteCategory.style.display = "block";
+        updateCategory.style.display = "block";
+        saveCategory.style.display = "none";
+</script>
+<?php }?>
