@@ -1,5 +1,6 @@
 <?php
  require_once '../model/Admin.php';
+ require_once 'shared.php';
 
  class Admin_controller extends Admin{
 
@@ -28,6 +29,7 @@
        if($result){
           $_SESSION['Admin']=$result['id'];
           header("Location: ../view/dashboard.php");
+        // echo $result['id'];
        }else{
           $_SESSION['loginError']="incorrect inputs";
        }
@@ -40,9 +42,18 @@
   }
   
   function get(){
-       return $this->getUsers();
+    return $this->getUsers();
   }
 
+  function countit(){
+    $user = new Admin();
+    return $user->countusers();
+  }
+
+  function logout(){
+    unset($_SESSION['Admin']);
+    header("Location: ../view/login.php");
+  }
  }
 
 ?>

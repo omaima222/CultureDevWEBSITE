@@ -2,10 +2,15 @@
 <?php
     require_once '../controller/shared.php';
 
-    if(!isset($_SESSION['Admin'])) header('Location: signup.php');
+    if(!isset($_SESSION['Admin'])) header('Location: login.php');
     else{
         $admin = new Admin_controller();
         $admin = $admin->displayUser();
+    }
+
+    if(isset($_POST['logout'])){
+        $logout = new Admin_controller();
+        $logout->logout();
     }
 ?>
 
@@ -29,6 +34,9 @@
         <h1>Welcome <span><?= $admin['first_name']?></span></h1>
       </section>
       <h1  class="navBar_title">DASHBOARD</h1>
+      <form action="" method="POST">
+      <button type="submit" name="logout"><i class="bi bi-box-arrow-left fa-x3"></i>Log out</button>
+      </form>
    </div>
    <section class="content">
         <div class="sideBar">
@@ -36,7 +44,7 @@
             <h1 onclick="categories()">CATEGORIES</h1>
             <h1 onclick="statics()">STATISTICS</h1>
         </div>
-        <section class="postSection" id="postSection" >
+        <section class="postSection" id="postSection">
             <section>
                 <?php if (isset($_SESSION['post'])) { ?>
                     <div class="saved"><?= $_SESSION['post']; ?></div>
@@ -50,7 +58,6 @@
                         <label for="search">SEARCH : </label>
                         <input type="text" name="searchTitle" placeholder="By title or Category">
                         <button name="searchButton" class="searchButton"><i class="bi bi-search fa-1x"></i></button>
-                        <!-- <span><table>(Type "all" to show all posts)</table></span> -->
                     </form>
                 </div>
                 <button class="addButton" onclick="window.location='formPost.php'">ADD</button>
@@ -74,9 +81,9 @@
                             else $post = $post->get();
                             foreach( $post as $post){
                         ?>
-                        <tr class="arow clickable" onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
+                        <tr class="arow clickable " onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
                             <td><?= $post['post_id']; ?></td>
-                            <td><img style="width:10rem; " src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
+                            <td><img style="width:10rem;" class="rounded-3" src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
                             <td><?= $post['title']; ?></td>
                             <td><?= $post['description']; ?></td>
                             <td><?= $post['name']; ?></td>
@@ -119,37 +126,28 @@
                     </tbody>
             </table>
         </section>
-        <section class="staticSection" id="staticSection" style="display: none;">
+        <section class="staticSection" id="staticSection"style="display: none;" >
             <?php
                 $countPost = new Posts_controller();
                 $countPost=$countPost->countit();
 
                 $countCategorie = new Categories_controller();
                 $countCategorie=$countCategorie->countit();
+
+                $countUsers = new Admin_controller();
+                $countUsers=$countUsers->countit();
             ?>
             <div class="cards">
-                <h1>Num of posts</h1>
+                <h1>Number of posts</h1>
                 <div class="postsNum"><?=$countPost?></div>
             </div>
             <div class="cards">
-                <h1>Num of developers</h1>
-                <div class="autorsNum"><?=$countCategorie?></div>
+                <h1>Number of developers</h1>
+                <div class="autorsNum"><?=$countUsers?></div>
             </div>
             <div class="cards">
-                <h1>Distincts developers</h1>
-                <div class="DautorsNum">
-                    <?php
-                       $adminCount = new Admin_controller();
-                       $adminCount = $adminCount->get();
-                       $countId=0;
-                       $theDevlopper;
-                       foreach($adminCount as $adminCount){
-                          if($adminCount['id']==$post['post_id']){
-                            $countId++;
-                          }
-                       }
-                    ?>
-                </div>
+                <h1>Number of Categories</h1>
+                <div class="DautorsNum"><?=$countCategorie?></div>
             </div>
         </section>
    </section>

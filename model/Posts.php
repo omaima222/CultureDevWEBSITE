@@ -4,15 +4,15 @@
 
  class Posts extends Connection{
      
-    public $id;
-    public $title;
-    public $cover;
-    public $coverName;
-    public $content;
-    public $category;
-    public $tag;
-    public $autor;
-    public $description;
+    private $id;
+    private $title;
+    private $cover;
+    private $coverName;
+    private $content;
+    private $category;
+    private $tag;
+    private $autor;
+    private $description;
 
     // ______________setters___________//
 

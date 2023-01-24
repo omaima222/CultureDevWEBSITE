@@ -13,6 +13,8 @@
     width: 100%;
     padding: 0.5rem;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     &_user{
         display: flex;
         flex-direction: column;
@@ -42,8 +44,16 @@
         color: $main_color;
         font-weight: 200;
         font-size: 4rem;
-        left: 28%;
-        position: relative;    
+    }
+    button{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: none;
+        margin-right: 1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -184,18 +194,22 @@
     }
 
     table{
-        background-color: #8a75d7cc;
+        background-color: #dbbef5cc;
         border-radius: 1rem;
         color: $main_color;
         .arow{
             &:hover{
-                background-color: rgb(249, 232, 197);
+                background-color: rgba(0, 0, 0, 0.116);
                 transition: 0.4s;
                 -webkit-transition: 0.4s;
                 -moz-transition: 0.4s;
                 -ms-transition: 0.4s;
                 -o-transition: 0.4s;
             }
+        }
+
+        tbody tr{
+            border-top: 1.5px solid rgba(0, 0, 0, 0.116);
         }
     }
  

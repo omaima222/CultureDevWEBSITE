@@ -23,7 +23,7 @@
     <title>Document</title>
 </head>
 <body class="allmodals">
-    <form calss="forms" action="" method="POST" enctype="multipart/form-data">
+<form  method="POST" id="postForm" enctype="multipart/form-data">
         <?php
           if(isset($_GET['postId'])){
              $OnePost = new Posts_controller();
@@ -51,7 +51,8 @@
                 <div>
                     <section>
                         <label for="title">Title</label>
-                        <input type="text" name="title" value="<?=$title?>">
+                        <input type="text" name="title" id="postTitle" value="<?=$title?>">
+                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="titleError"></div>
                     </section>
                     <section>
                         <label for="cover">Cover</label>
@@ -59,11 +60,13 @@
                     </section>
                     <section>
                         <label for="description">Description</label>
-                        <textarea type="text" name="description" ><?=$description?></textarea>
+                        <textarea type="text" name="description" id="postDesc" ><?=$description?></textarea>
+                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="descError"></div>
                     </section>
                     <section>
                         <label for="tag">Tag</label>
-                        <input type="text" name="tag" value="<?=$tag?>">
+                        <input type="text" name="tag" id="postTag" value="<?=$tag?>">
+                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="tagError"></div>
                     </section>
                     <section>
                         <label for="category_id">Category</label>
@@ -79,17 +82,12 @@
                         </select>
                     </section>
                 </div>
-                <div id="editor" ><?=$content?></div>
-                    <script>
-                            ClassicEditor
-                                    .create( document.querySelector( '#editor' ) )
-                                    .then( editor => {
-                                            console.log( editor );
-                                    } )
-                                    .catch( error => {
-                                            console.error( error );
-                                    } );
-                    </script>
+                <div>
+                    <section>
+                        <label for="content" class="mb-2">Content</label>
+                        <textarea name="content" id="postContent"><?=$content?></textarea>
+                    </section>
+                </div>
            </div>
         </div>
         <div class="formFooter">
@@ -100,4 +98,5 @@
     </form>
 </body>
 </html>
+<script src="../assets/tinymce/tinymce.min.js"></script>
 <script src="../assets/js/main.js"></script>

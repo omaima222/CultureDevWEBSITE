@@ -24,6 +24,8 @@ body {
   width: 100%;
   padding: 0.5rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navBar_user {
   display: flex;
@@ -54,8 +56,16 @@ body {
   color: #382676;
   font-weight: 200;
   font-size: 4rem;
-  left: 28%;
-  position: relative;
+}
+.navBar button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  font-size: 1.3rem;
 }
 
 .sideBar {
@@ -195,17 +205,20 @@ body {
   background-color: rgb(184, 193, 240);
 }
 .content table {
-  background-color: rgba(138, 117, 215, 0.8);
+  background-color: rgba(219, 190, 245, 0.8);
   border-radius: 1rem;
   color: #382676;
 }
 .content table .arow:hover {
-  background-color: rgb(249, 232, 197);
+  background-color: rgba(0, 0, 0, 0.116);
   transition: 0.4s;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
+}
+.content table tbody tr {
+  border-top: 1.5px solid rgba(0, 0, 0, 0.116);
 }
 
 .saved {

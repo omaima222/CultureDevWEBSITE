@@ -4,8 +4,8 @@
 
  class Categories extends Connection{
       
-     public $id;
-     public $category;
+     private $id;
+     private $category;
 
     //  _____________setters_____________//
      public function setid($id)

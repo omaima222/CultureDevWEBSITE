@@ -4,13 +4,13 @@
 
  class Admin extends Connection{
     
-    public $firstName;
-    public $lastName;
-    public $email;
-    public $password;
+    private $firstName;
+    private $lastName;
+    private $email;
+    private $password;
     public $pfp;
-    public $pfpName;
-    public $id;
+    private $pfpName;
+    private $id;
    
     // ________________setters_______________//
 
@@ -75,8 +75,15 @@
     function getUsers(){
         $que = "SELECT * FROM admin";
         $stmt= $this->connect()->prepare($que);
-        $stmt->execute([$this->id]);
+        $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    function countusers(){
+        $que="SELECT * FROM admin ";
+        $stmt = $this->connect()->prepare($que);
+        $stmt->execute();
+        return $stmt->rowCount();
     }
  }
 
