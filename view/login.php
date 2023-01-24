@@ -14,26 +14,26 @@
     <title>Document</title>
 </head>
 <body class="logBody">
-    <form action="" method="POST" class="loginForm">
-        <h1 class="loginTitle">Log in</h1>
-        <section>
-            <div class="logDiv">
-                <?php if (isset($_SESSION['loginError'])) { ?>
-                    <div class="error"><?= $_SESSION['loginError']; ?></div>
-                <?php }
-                unset($_SESSION['loginError']); ?>
-            </div>
-            <div class="logDiv">
-                <label for="email">Email</label>
-                <input type="text" name="logemail" required>
-            </div>
-            <div class="logDiv">
-                <label for="password">Password</label>
-                <input type="password" name="logpassword" required>
-            </div>
-            <button class="logSubmit" name="logSubmit"  type="submit">S U B M I T</button>
-        </section>
-    </form>
-    <h1 class="logToSign">Don't have an account ? <a href="signup.php">signup</a></h1>
+        <form action="" method="POST" class="loginForm">
+            <h1 class="loginTitle">Log in</h1>
+            <section>
+                <div class="logDiv">
+                    <?php if (isset($_SESSION['loginError'])) { ?>
+                        <div class="error"><?= $_SESSION['loginError']; ?></div>
+                    <?php }
+                    unset($_SESSION['loginError']); ?>
+                </div>
+                <div class="logDiv">
+                    <label for="email">Email</label>
+                    <input type="text" name="logemail" required>
+                </div>
+                <div class="logDiv">
+                    <label for="password">Password</label>
+                    <input type="password" name="logpassword" required>
+                </div>
+                <button class="logSubmit" name="logSubmit"  type="submit">S U B M I T</button>
+            </section>
+        </form>
+        <h1 class="logToSign">Don't have an account ? <a href="signup.php">signup</a></h1>
 </body>
 </html>

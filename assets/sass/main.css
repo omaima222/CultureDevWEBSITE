@@ -7,7 +7,6 @@
 
 body {
   display: flex;
-  justify-content: space-between;
   font-family: "Dosis", sans-serif !important;
 }
 
@@ -21,8 +20,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
-  padding: 0.5rem;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +30,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 0.5rem;
 }
 .navBar_user img {
   border-radius: 50%;
@@ -39,23 +38,24 @@ body {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
 }
 .navBar_user h1 {
   color: #EEEEEE;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .navBar_user h1 span {
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-weight: 400;
 }
 .navBar_title {
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-weight: 200;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .navBar button {
   display: flex;
@@ -65,30 +65,48 @@ body {
   background: none;
   border: none;
   margin-right: 1rem;
-  font-size: 1.3rem;
 }
 
 .sideBar {
-  background-color: #382676;
+  background-color: rgb(54, 35, 71);
   color: #EEEEEE;
-  width: 9.3rem;
-  height: 41.8rem;
+  width: 7rem;
   padding: 0.5rem;
   text-align: center;
 }
 .sideBar h1 {
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 3rem;
+  background: none;
+  border: 2px solid #ADDDD0;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border: none;
+  padding: 0.3rem;
+}
+.sideBar h1:hover {
+  background-color: #ADDDD0;
+  color: rgb(54, 35, 71);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
 .content {
   display: flex;
+  height: 100vh;
 }
 .content .tableHead {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 0.5rem;
 }
 .content .tableHead button {
   width: 7rem;
@@ -99,13 +117,13 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   border: 2px solid #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   margin-top: 2rem;
   padding: 0.3rem;
 }
 .content .tableHead button:hover {
   background: none;
-  border: 2px solid #382676;
+  border: 2px solid rgb(54, 35, 71);
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -130,15 +148,16 @@ body {
   align-items: center;
 }
 .content .tableHead .searchBar label {
-  font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-right: 0.5rem;
+  color: rgb(54, 35, 71);
 }
 .content .tableHead .searchBar input {
   background: none;
   padding: 0.5rem;
   height: 1.5rem;
-  border: 2px solid rgb(75, 75, 75);
+  width: 10rem;
+  border: 0.12rem solid rgb(54, 35, 71);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -157,7 +176,7 @@ body {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   background: none;
-  border: 2px solid #382676;
+  border: 0.12rem solid rgb(54, 35, 71);
 }
 .content .postSection {
   margin: 1rem;
@@ -179,7 +198,7 @@ body {
 }
 .content .staticSection .cards h1 {
   font-weight: 400;
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-size: 1.5rem;
 }
 .content .staticSection .cards div {
@@ -207,7 +226,7 @@ body {
 .content table {
   background-color: rgba(219, 190, 245, 0.8);
   border-radius: 1rem;
-  color: #382676;
+  color: rgb(54, 35, 71);
 }
 .content table .arow:hover {
   background-color: rgba(0, 0, 0, 0.116);
@@ -224,7 +243,7 @@ body {
 .saved {
   width: 85vw;
   background-color: #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-size: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -232,7 +251,7 @@ body {
 }
 
 .loginTitle {
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-size: 4rem;
   font-weight: 300;
 }
@@ -240,7 +259,7 @@ body {
   content: " ";
   width: 14rem;
   height: 0.2rem;
-  background-color: #382676;
+  background-color: rgb(54, 35, 71);
   position: absolute;
   margin-left: 1rem;
   top: 15%;
@@ -254,7 +273,7 @@ body {
   content: " ";
   width: 0.2rem;
   height: 20rem;
-  background-color: #382676;
+  background-color: rgb(54, 35, 71);
   position: absolute;
   margin-top: 2.5rem;
   top: 11%;
@@ -266,19 +285,19 @@ body {
 }
 
 .loginForm {
-  position: absolute;
   top: 18%;
+  margin-top: 2rem;
 }
 
 .error {
   background-color: #f0abab;
   padding: 0.5rem;
-  border-radius: 3px;
   text-align: center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
 }
 
 .logBody {
@@ -289,6 +308,7 @@ body {
   background-size: cover;
   padding: 0rem 3rem 0rem 3rem;
   align-items: baseline;
+  justify-content: space-between;
 }
 .logBody form {
   width: 25rem;
@@ -298,7 +318,7 @@ body {
 }
 
 .logTitle {
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-size: 4rem;
   font-weight: 300;
 }
@@ -306,7 +326,7 @@ body {
   content: " ";
   width: 12rem;
   height: 0.2rem;
-  background-color: #382676;
+  background-color: rgb(54, 35, 71);
   position: absolute;
   margin-left: 1rem;
   top: 10%;
@@ -320,7 +340,7 @@ body {
   content: " ";
   width: 0.2rem;
   height: 34rem;
-  background-color: #382676;
+  background-color: rgb(54, 35, 71);
   position: absolute;
   margin-top: 1rem;
   top: 10%;
@@ -348,13 +368,14 @@ body {
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+  border: none;
   height: 2rem;
-  color: #EEEEEE;
   padding: 0.5rem;
+  background-color: white;
+  color: rgb(54, 35, 71);
 }
 .logDiv .pfp {
-  padding: 0rem;
-  height: 1.5rem;
+  padding-bottom: 1.7rem;
 }
 
 .logSubmit {
@@ -365,7 +386,7 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   border: 1px solid #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   width: 100%;
   margin-top: 2rem;
   padding: 0.5rem;
@@ -381,7 +402,7 @@ body {
 }
 .logSubmit:active {
   background-color: #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -390,7 +411,7 @@ body {
 }
 
 .logToSign {
-  color: #382676;
+  color: rgb(54, 35, 71);
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -446,28 +467,31 @@ body {
   margin-top: 0.5rem;
   height: 2rem;
   padding: 0.5rem;
-  background: none;
+  background: #EEEEEE;
   border-radius: 1rem;
   border: 2px solid #EEEEEE;
-  color: #EEEEEE;
+  color: rgb(54, 35, 71);
 }
 .allmodals form .formBody section select {
   margin-top: 0.5rem;
   height: 2rem;
   padding: 0.5rem;
-  background: none;
+  background: #EEEEEE;
   border-radius: 1rem;
   border: 2px solid #EEEEEE;
-  color: #EEEEEE !important;
+  color: rgb(54, 35, 71) !important;
+}
+.allmodals form .formBody section .cover {
+  padding-bottom: 1.7rem;
 }
 .allmodals form .formBody section textarea {
   margin-top: 0.5rem;
   height: 5rem;
   padding: 0.5rem;
-  background: none;
+  background: #EEEEEE;
   border-radius: 1rem;
   border: 2px solid #EEEEEE;
-  color: #EEEEEE;
+  color: rgb(54, 35, 71);
 }
 .allmodals form .formFooter button {
   float: right;
@@ -478,7 +502,7 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   border: 1px solid #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   margin: 1rem;
   padding: 0.5rem;
   width: 5rem;
@@ -494,7 +518,7 @@ body {
 }
 .allmodals form .formFooter button:active {
   background-color: #ADDDD0;
-  color: #382676;
+  color: rgb(54, 35, 71);
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -503,10 +527,46 @@ body {
 }
 .allmodals form .postform .separate {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
 .allmodals form .postform #editor {
   margin-left: 1rem;
+}
+
+.inputError {
+  margin-top: 0.5rem;
+  text-align: center;
+  background-color: #f0abab;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  color: rgb(54, 35, 71);
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 700px) {
+  .tableHead {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .navBar_title {
+    display: none;
+  }
+  .postform .separate {
+    flex-direction: column;
+  }
+  .postform .formBody div div section {
+    width: 10rem;
+  }
+  .logBody {
+    flex-direction: column;
+  }
+  .logBody h1 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
 }

@@ -44,28 +44,31 @@
                     margin-top: 0.5rem;
                     height: 2rem;
                     padding: 0.5rem;
-                    background: none;
+                    background: $text_color;
                     border-radius: 1rem;
                     border: 2px solid $text_color;
-                    color: $text_color;
+                    color: $main_color;
                 }
                 select{
                     margin-top: 0.5rem;
                     height: 2rem;
                     padding: 0.5rem;
-                    background: none;
+                    background: $text_color;
                     border-radius: 1rem;
                     border: 2px solid $text_color;
-                    color: $text_color!important;                
+                    color: $main_color!important;                
+                }
+                .cover{
+                    padding-bottom: 1.7rem;
                 }
                 textarea{
                     margin-top: 0.5rem;
                     height: 5rem;
                     padding: 0.5rem;
-                    background: none;
+                    background: $text_color;
                     border-radius: 1rem;
                     border: 2px solid $text_color;
-                    color: $text_color;                  
+                    color: $main_color;                  
                 }
             }
 
@@ -107,7 +110,6 @@
         .postform{
             .separate{
                 display: flex;
-                flex-direction: row;
                 justify-content: space-between;
                 align-items: baseline;
             }
@@ -119,3 +121,16 @@
     
 }
 
+
+.inputError{
+    margin-top: 0.5rem;
+    text-align: center;
+    background-color: #f0abab;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+    color: $main_color;
+    font-size: 14px;
+}

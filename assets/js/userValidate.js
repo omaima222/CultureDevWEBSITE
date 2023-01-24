@@ -31,7 +31,6 @@ signupForm.addEventListener('submit', (e)=>{
         fnameError.innerText = "This input shoud not include space";
     }
 
-    // console.log(fnameError);
 
     if(lname.value == ""){
         e.preventDefault();

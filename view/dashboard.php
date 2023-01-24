@@ -35,7 +35,7 @@
       </section>
       <h1  class="navBar_title">DASHBOARD</h1>
       <form action="" method="POST">
-      <button type="submit" name="logout"><i class="bi bi-box-arrow-left fa-x3"></i>Log out</button>
+      <button type="submit" name="logout"><i class="bi bi-box-arrow-left fa-2x"></i></button>
       </form>
    </div>
    <section class="content">
@@ -62,40 +62,42 @@
                 </div>
                 <button class="addButton" onclick="window.location='formPost.php'">ADD</button>
             </section>
-            <table class="table ">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Cover</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Autor</th>
-                            <th>Tags</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php                            
-                            $post = new Posts_controller();
-                            if(isset($_POST['searchButton'])) $post = $post->search();
-                            else $post = $post->get();
-                            foreach( $post as $post){
-                                if(strlen($post['description']) > 30){
-                                    $desc = substr($post['description'],0,30).' ...';
-                                }else $desc = $post['description'];
-                        ?>
-                        <tr class="arow clickable " onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
-                            <td><?= $post['post_id']; ?></td>
-                            <td><img style="width:10rem;" class="rounded-3" src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
-                            <td><?= $post['title']; ?></td>
-                            <td title="<?= $post['description']; ?>"><?= $desc; ?></td>
-                            <td><?= $post['name']; ?></td>
-                            <td><?= $post['first_name']; ?> <?= $post['last_name']; ?></td>
-                            <td><?= $post['tag']; ?></td>
-                        </tr>
-                        <?php }?>
-                    </tbody>
-            </table>
+            <div class="table-responsive rounded-3">
+                <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Autor</th>
+                                <th>Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php                            
+                                $post = new Posts_controller();
+                                if(isset($_POST['searchButton'])) $post = $post->search();
+                                else $post = $post->get();
+                                foreach( $post as $post){
+                                    if(strlen($post['description']) > 30){
+                                        $desc = substr($post['description'],0,30).' ...';
+                                    }else $desc = $post['description'];
+                            ?>
+                            <tr class="arow clickable " onclick="window.location='formPost.php?postId=<?=$post['post_id'];?>'">
+                                <td><?= $post['post_id']; ?></td>
+                                <td><img style="width:10rem;" class="rounded-3" src="../assets/covers/<?= $post['cover']; ?>" alt="cover"></td>
+                                <td><?= $post['title']; ?></td>
+                                <td title="<?= $post['description']; ?>"><?= $desc; ?></td>
+                                <td><?= $post['name']; ?></td>
+                                <td><?= $post['first_name']; ?> <?= $post['last_name']; ?></td>
+                                <td><?= $post['tag']; ?></td>
+                            </tr>
+                            <?php }?>
+                        </tbody>
+                </table>
+            </div>
         </section>
         <section class="categorySection" id="categorySection" style="display: none;">
             <section>

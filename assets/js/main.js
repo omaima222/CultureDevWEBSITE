@@ -42,7 +42,7 @@ let contentError= document.getElementById("contentError");
 
 postForm.addEventListener('submit', (e)=>{
 
-  if(postTitle.value == ""){
+  if(postTitle.value == "" || postTitle.value == " "){
     e.preventDefault();
     TitleError.innerText= "This input is required";
   }else if(postTitle.value.length < 5){
@@ -50,7 +50,7 @@ postForm.addEventListener('submit', (e)=>{
     TitleError.innerText= "This title is too short";
   }
 
-  if(postTag.value == ""){
+  if(postTag.value == "" || postTag.value == " "){
     e.preventDefault();
     TagError.innerText= "This input is required";
   }else if(postTag.value[0] != "#"){
@@ -62,12 +62,12 @@ postForm.addEventListener('submit', (e)=>{
   }
 
 
-  if(postDesc.value == ""){
+  if(postDesc.value == "" || postDesc.value == " "){
     e.preventDefault();
     DescError.innerText= "This input is required";
   }
 
-  if(postContent.value == ""){
+  if(postContent.value == "" || postContent.value == " "){
     e.preventDefault();
     contentError.innerText= "This input is required";
   }
@@ -137,7 +137,6 @@ postForm.addEventListener('submit', (e)=>{
 
 tinymce.init({
   selector: 'textarea#postContent',
-  width: 700,
   height: 420,
   plugins:[
       'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'prewiew', 'anchor', 'pagebreak',

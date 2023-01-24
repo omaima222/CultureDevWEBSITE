@@ -23,7 +23,7 @@
     <title>Document</title>
 </head>
 <body class="allmodals">
-    <form calss="forms" action="" method="POST" >
+    <form style="width: 25rem;" calss="forms" method="POST" >
         <?php
           if(isset($_GET['categoryId'])){
              $Onecategory = new Categories_controller();
@@ -39,7 +39,7 @@
         <div class="formBody">
             <section>
                 <label for="category">Category name</label>
-                <input type="text" name="category" value="<?= $name?>">
+                <input type="text" name="category" value="<?= $name?>" required>
             </section>
         </div>
         <div class="formFooter">

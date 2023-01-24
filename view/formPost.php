@@ -19,8 +19,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/sass/main.css">
-    <!-- <link href="../assets/css/vendor.min.css" rel="stylesheet" />
-   	<link href="../assets/css/app.min.css" rel="stylesheet" /> -->
     <title>Document</title>
 </head>
 <body class="allmodals">
@@ -53,21 +51,21 @@
                     <section>
                         <label for="title">Title</label>
                         <input type="text" name="title[]" id="postTitle" value="<?=$title?>">
-                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="titleError"></div>
+                        <div class="inputError" id="titleError"></div>
                     </section>
                     <section>
                         <label for="cover">Cover</label>
-                        <input type="file" name="cover[]" accept=" .jpg, .png, .jpeg">
+                        <input class="cover" type="file" name="cover[]" accept=" .jpg, .png, .jpeg">
                     </section>
                     <section>
                         <label for="description">Description</label>
                         <textarea type="text" name="description[]" id="postDesc" ><?=$description?></textarea>
-                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="descError"></div>
+                        <div class="inputError" id="descError"></div>
                     </section>
                     <section>
                         <label for="tag">Tag</label>
                         <input type="text" name="tag[]" id="postTag" value="<?=$tag?>">
-                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="tagError"></div>
+                        <div class="inputError" id="tagError"></div>
                     </section>
                     <section>
                         <label for="category_id">Category</label>
@@ -78,17 +76,16 @@
                                 $category = $category->get();
                                 foreach($category as $category){
                             ?>
-                            <option class="options text-black" value="<?=$category['id']?>"  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
+                            <option class="options" value="<?=$category['id']?>"  <?php echo $category['id']==$categoryid ? 'selected':'';?> ><?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
-                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="categoryError"></div>
                     </section>
                 </div>
                 <div>
                     <section>
-                        <label for="content" class="mb-2">Content</label>
+                        <label style="margin-bottom: 1rem;" for="content" class="mb-2">Content</label>
                         <textarea name="content[]" id="postContent"><?=$content?></textarea>
-                        <div style="background-color: #f0abab;" class="mt-1 rounded-pill text-center" id="contentError"></div>
+                        <div  class="inputError" id="contentError"></div>
                     </section>
                 </div>
            </div>
